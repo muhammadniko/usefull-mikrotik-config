@@ -1,4 +1,4 @@
-:local avgRtt
+local avgRtt
 :local pin
 :local pout
 
@@ -10,10 +10,9 @@
     }
 }
 
-:local ploss (100 - (($pin * 100) / $pout))
 :local pingLatt ([:tostr $avgRtt]."ms")
-:local lossPercent ([:tostr $ploss]."%")
+:local packetLoss ([:tostr (100 - (($pin * 100) / $pout))]."%")
 
 
 :put ("Ping: ".$pingLatt)
-:put ("Packet-Loss: ".$lossPercent)
+:put ("Packet-Loss: ".$packetLoss)
