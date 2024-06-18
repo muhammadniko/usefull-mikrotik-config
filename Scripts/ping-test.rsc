@@ -1,4 +1,4 @@
-local avgRtt
+:local avgRtt
 :local pin
 :local pout
 
