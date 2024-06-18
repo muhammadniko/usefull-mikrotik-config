@@ -3,12 +3,17 @@
 :local pout
 
 /tool flood-ping 8.8.8.8 count=10 do={
-  :if ($sent = 10) do={
-    :set avgRtt $"avg-rtt"
-    :set pout $sent
-    :set pin $received
-  }
+    :if ($sent = 10) do={
+        :set avgRtt $"avg-rtt"
+        :set pout $sent
+        :set pin $received
+    }
 }
 
 :local ploss (100 - (($pin * 100) / $pout))
-:local logmsg ("- Ping: ".[:tostr $avgRtt]."ms %0A- Packet Loss: ".[:tostr $ploss]."%")
+:local pingLatt ([:tostr $avgRtt]."ms")
+:local lossPercent ([:tostr $ploss]."%")
+
+
+:put ("Ping: ".$pingLatt)
+:put ("Packet-Loss: ".$lossPercent)
