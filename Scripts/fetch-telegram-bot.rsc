@@ -1,5 +1,5 @@
-:local BOT_TOKEN ("")
-:local CHAT_ID ("")
-:local TEXT_MESSAGE ("")
+:local botID ("")
+:local chatID ("")
+:local textMessage ("")
 
-/tool fetch url="https://api.telegram.org/$BOT_TOKEN/sendMessage?chat_id=$CHAT_ID&parse_mode=HTML&text=$TEXT_MESSAGE" keep-result=no
+/tool fetch url="https://api.telegram.org/$botID/sendMessage?chat_id=$chatID&parse_mode=HTML&text=$textMessage" keep-result=no
